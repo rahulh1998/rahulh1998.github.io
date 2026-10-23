@@ -126,6 +126,9 @@ h2 { font-size: clamp(28px, 3.6vw, 36px); font-weight: 700; letter-spacing: -.01
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 48px; }
 .job { display: grid; gap: 8px; }
 .job h3 { font-size: 22px; }
+.work-proj { display: grid; gap: 8px; margin-top: 12px; padding: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.work-proj h4 { font-family: var(--display); font-size: 19px; font-weight: 700; margin: 0; }
+.work-proj p { color: var(--muted); font-size: 15px; }
 .job .when { font-family: var(--mono); font-size: 13px; color: var(--accent); }
 .log { list-style: none; margin: 0; padding: 0; display: grid; }
 .log li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px; padding-block: 12px; border-bottom: 1px dashed var(--line); }
@@ -170,7 +173,8 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
         I build AI applications end to end: from classical machine learning and deep learning models to
         LLM-powered products with retrieval, tool-calling agents and stateful LangGraph orchestration.
         My recent work focuses on making those systems production-ready, with grounded retrieval,
-        deterministic guardrails around model output, honest evaluation and tested code.
+        deterministic guardrails around model output, honest evaluation and tested code, shipped in
+        containers on AWS with Docker and Kubernetes.
       </p>
       <div class="cta">
         <a class="btn primary" href="https://github.com/rahulh1998" target="_blank" rel="noopener">View GitHub profile</a>
@@ -187,6 +191,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
         <dt>core lang</dt><dd>Python</dd>
         <dt>frameworks</dt><dd>LangChain, LangGraph, scikit-learn, TensorFlow, PyTorch</dd>
         <dt>serving</dt><dd>Streamlit, Flask, LangServe</dd>
+        <dt>cloud · MLOps</dt><dd>AWS, Docker, Kubernetes</dd>
         <dt>vector stores</dt><dd>ChromaDB, FAISS</dd>
         <dt>LLM providers</dt><dd>OpenAI, Groq, Gemini, Ollama (local)</dd>
       </dl>
@@ -203,11 +208,11 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
     <div class="skills">
       <div class="skill">
         <h3>Generative AI and LLMs</h3>
-        <div class="chips"><span class="chip">LangChain · LCEL</span><span class="chip">LangGraph</span><span class="chip">RAG</span><span class="chip">Tool calling and agents</span><span class="chip">Conversational memory</span><span class="chip">Structured output · Pydantic</span><span class="chip">Streaming · async · batch</span></div>
+        <div class="chips"><span class="chip">LangChain · LCEL</span><span class="chip">LangGraph</span><span class="chip">RAG</span><span class="chip">Tool calling and agents</span><span class="chip">Conversational memory</span><span class="chip">Structured output · Pydantic</span><span class="chip">OpenAI · Gemini · Groq</span><span class="chip">Ollama · DeepSeek R1 · Gemma 3</span><span class="chip">Hugging Face</span></div>
       </div>
       <div class="skill">
-        <h3>Models and providers</h3>
-        <div class="chips"><span class="chip">OpenAI</span><span class="chip">Groq</span><span class="chip">Google Gemini</span><span class="chip">Ollama</span><span class="chip">DeepSeek R1</span><span class="chip">Gemma 3</span><span class="chip">BART (Hugging Face)</span></div>
+        <h3>Cloud and MLOps</h3>
+        <div class="chips"><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Streamlit</span><span class="chip">Flask</span><span class="chip">LangServe</span></div>
       </div>
       <div class="skill">
         <h3>Retrieval and data stores</h3>
@@ -222,8 +227,8 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
         <div class="chips"><span class="chip">TensorFlow · Keras</span><span class="chip">PyTorch</span><span class="chip">ANN</span><span class="chip">LSTM</span><span class="chip">spaCy</span><span class="chip">NER · POS tagging</span><span class="chip">Topic modelling</span><span class="chip">Sentiment analysis</span></div>
       </div>
       <div class="skill">
-        <h3>Data, apps and engineering</h3>
-        <div class="chips"><span class="chip">Pandas · NumPy</span><span class="chip">Matplotlib · Seaborn · Plotly</span><span class="chip">Streamlit</span><span class="chip">Flask</span><span class="chip">pytest</span><span class="chip">OOP · logging</span><span class="chip">Data structures and algorithms</span></div>
+        <h3>Data and engineering</h3>
+        <div class="chips"><span class="chip">Pandas · NumPy</span><span class="chip">Matplotlib · Seaborn · Plotly</span><span class="chip">pytest</span><span class="chip">OOP · logging</span><span class="chip">Data structures and algorithms</span></div>
       </div>
     </div>
   </section>
@@ -314,6 +319,11 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
         <span class="when">Current</span>
         <h3>Jet2 Travel Technologies</h3>
         <p class="summary">Working at Jet2's technology centre in India, applying Python, data and AI skills alongside the open-source work shown here.</p>
+        <div class="work-proj">
+          <span class="label">Key project</span>
+          <h4>AI Pricing</h4>
+          <p>Contributed to Jet2's AI pricing project, building AI solutions for pricing in the travel business.</p>
+        </div>
       </div>
       <ol class="log" aria-label="Learning timeline from GitHub history">
         <li><b>2026</b><p>Built the multi-agent NSE stock analyzer with LangGraph, RAG, ML ensembles and risk guardrails.</p></li>
