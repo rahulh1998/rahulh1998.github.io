@@ -179,10 +179,37 @@ h2 { font-size: clamp(30px, 3.8vw, 40px); font-weight: 700; letter-spacing: -.02
 .log b { font-family: var(--mono); font-weight: 500; color: var(--gold); font-variant-numeric: tabular-nums; }
 .log p { font-size: 15px; color: var(--soft); }
 
+/* Jobs */
+.jobs { display: grid; gap: 20px; }
+.job-row { display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 40px; padding-block: 28px; border-top: 1px solid var(--line); }
+.job-row:first-child { border-top: 0; padding-top: 4px; }
+.job-meta { display: grid; gap: 6px; align-content: start; }
+.job-meta h3 { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+.org { color: var(--soft); font-weight: 500; }
+.job-body { display: grid; gap: 18px; }
+.wins { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.wins li { position: relative; padding-left: 20px; color: var(--muted); font-size: 15.5px; }
+.wins li::before { content: ""; position: absolute; left: 0; top: .7em; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px rgba(227, 195, 143, .6); }
+.wins b { color: var(--fg); font-weight: 600; }
+.wins strong { color: var(--gold); font-weight: 600; }
+.mail { justify-self: start; font-family: var(--mono); font-size: 14px; color: var(--muted); text-decoration: none; border-bottom: 1px dashed var(--gold-deep); }
+.mail:hover { color: var(--gold); }
+.links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.links a { text-decoration: none; }
+.links a:hover { text-decoration: underline; }
+
+/* Credentials */
+.creds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.cred { display: grid; gap: 16px; align-content: start; padding: 22px; border-radius: 18px; border: 1px solid var(--line); background: linear-gradient(180deg, var(--surface-hi), var(--surface)); }
+.cred .label { color: var(--gold); }
+.cred h3 { font-size: 16.5px; font-weight: 600; }
+.cred p { color: var(--muted); font-size: 14.5px; }
+
 footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 24px; }
 
 @media (max-width: 860px) {
-  .hero, .flagship, .split { grid-template-columns: minmax(0, 1fr); }
+  .hero, .flagship, .split, .job-row, .creds { grid-template-columns: minmax(0, 1fr); }
+  .job-row { gap: 16px; }
   .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
@@ -212,20 +239,22 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
       <p class="role">AI / ML Engineer building Generative AI, RAG and multi-agent systems in Python</p>
       <div class="meta">
         <span>India</span>
-        <span>Jet2 Travel Technologies</span>
-        <span>GitHub since 2017</span>
+        <span>Data Scientist at Jet2 Travel Technologies</span>
+        <span>5+ years in AI and ML</span>
       </div>
       <p class="summary">
-        I build AI applications end to end: from classical machine learning and deep learning models to
+        Data scientist with 5+ years of experience. I build AI applications end to end: from classical machine learning and deep learning models to
         LLM-powered products with retrieval, tool-calling agents and stateful LangGraph orchestration.
         My recent work focuses on making those systems production-ready, with grounded retrieval,
         deterministic guardrails around model output, honest evaluation and tested code, shipped in
         containers on AWS with Docker and Kubernetes.
       </p>
       <div class="cta">
-        <a class="btn primary" href="https://github.com/rahulh1998" target="_blank" rel="noopener">View GitHub profile</a>
-        <a class="btn ghost" href="https://github.com/rahulh1998/AI-Stock-Market-Analyzer" target="_blank" rel="noopener">See flagship project</a>
+        <a class="btn primary" href="Rahul_Hirondi_Resume.pdf" target="_blank" rel="noopener">View my CV</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/rahulhirondi" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/rahulh1998" target="_blank" rel="noopener">GitHub</a>
       </div>
+      <a class="mail" href="mailto:rahul.h1998@gmail.com">rahul.h1998@gmail.com</a>
     </div>
 
     <aside class="card" aria-label="Model card summary">
@@ -237,27 +266,70 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
         <dt>frameworks</dt><dd>LangChain, LangGraph, scikit-learn, TensorFlow, PyTorch</dd>
         <dt>serving</dt><dd>Streamlit, Flask, LangServe</dd>
         <dt>cloud · MLOps</dt><dd>AWS, Docker, Kubernetes</dd>
+        <dt>data platform</dt><dd>Snowflake (Tasks, Streams, Cortex), SQL</dd>
         <dt>vector stores</dt><dd>ChromaDB, FAISS</dd>
         <dt>LLM providers</dt><dd>OpenAI, Groq, Gemini, Ollama (local)</dd>
       </dl>
       <div class="stats">
-        <div><b>10</b><span class="label">Public repos</span></div>
+        <div><b>5+</b><span class="label">Years in AI / ML</span></div>
         <div><b>30+</b><span class="label">ML / NLP builds</span></div>
         <div><b>11</b><span class="label">GenAI apps</span></div>
       </div>
     </aside>
   </header>
 
+  <section aria-labelledby="exp-h">
+    <div class="sec-head"><span class="label">Experience</span><h2 id="exp-h">Where I've worked</h2></div>
+    <div class="jobs">
+      <article class="job-row">
+        <div class="job-meta">
+          <span class="when">Jul 2024 – Present</span>
+          <h3>Data Scientist</h3>
+          <p class="org">Jet2 Travel Technologies</p>
+        </div>
+        <div class="job-body">
+          <ul class="wins">
+            <li><b>Real-time data engineering.</b> Built a high-throughput Snowflake pipeline (Tasks and Streams) that parses nested JSON from AWS WhatsApp transcripts, moving event detection from hourly batches to real-time streaming.</li>
+            <li><b>Prompt engineering.</b> Designed and version-controlled system prompts in Snowflake Cortex using context injection, few-shot examples and chain-of-thought, reducing hallucinations when classifying unstructured chat data.</li>
+            <li><b>Hybrid anomaly detection.</b> Combined statistical rules (z-scores, 98th percentile) with NLP (lemmatization, TF-IDF) to separate noise from real operational disruptions at <strong>98% precision</strong>.</li>
+            <li><b>Full-stack GenAI app.</b> Shipped a production Streamlit app with role-based access, a custom UI and human-in-the-loop feedback for model validation and retraining.</li>
+            <li><b>Operational impact.</b> Connected Snowflake alerts to Microsoft Teams so Ops teams act on disruptions early, <strong>cutting support calls by 30%</strong>. Owned the MLOps lifecycle and optimized token costs.</li>
+          </ul>
+          <div class="work-proj">
+            <span class="label">Key project</span>
+            <h4>AI Pricing</h4>
+            <p>Contributed to Jet2's AI pricing project, building AI solutions for pricing in the travel business.</p>
+          </div>
+        </div>
+      </article>
+      <article class="job-row">
+        <div class="job-meta">
+          <span class="when">Apr 2021 – Jul 2024</span>
+          <h3>Data Scientist</h3>
+          <p class="org">Cognizant</p>
+        </div>
+        <div class="job-body">
+          <ul class="wins">
+            <li><b>GenAI tax assistant.</b> Built a RAG conversational assistant with Llama 3 and LangChain, using Groq for fast inference, FAISS for retrieval and a Streamlit interface.</li>
+            <li><b>Pipelines and MLOps.</b> Built scalable SQL and Python pipelines that made processing <strong>70% faster</strong>, and automated monitoring for <strong>25+ ML models</strong>, halving manual reporting.</li>
+            <li><b>Fraud detection.</b> Developed an XGBoost and Random Forest ensemble for imbalanced transaction data using SMOTE and ADASYN, reaching <strong>92% accuracy</strong>.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
   <section aria-labelledby="skills-h">
     <div class="sec-head"><span class="label">Capabilities</span><h2 id="skills-h">Skills and tooling</h2></div>
     <div class="skills">
       <div class="skill">
         <h3>Generative AI and LLMs</h3>
-        <div class="chips"><span class="chip">LangChain · LCEL</span><span class="chip">LangGraph</span><span class="chip">RAG</span><span class="chip">Tool calling and agents</span><span class="chip">Conversational memory</span><span class="chip">Structured output · Pydantic</span><span class="chip">OpenAI · Gemini · Groq</span><span class="chip">Ollama · DeepSeek R1 · Gemma 3</span><span class="chip">Hugging Face</span></div>
+        <div class="chips"><span class="chip">Prompt engineering</span><span class="chip">LangChain · LCEL</span><span class="chip">LangGraph</span><span class="chip">RAG</span><span class="chip">Tool calling and agents</span><span class="chip">Conversational memory</span><span class="chip">Structured output · Pydantic</span><span class="chip">OpenAI · Gemini · Groq</span><span class="chip">Llama 3 · Snowflake Cortex</span><span class="chip">Ollama · DeepSeek R1 · Gemma 3</span><span class="chip">Hugging Face</span></div>
       </div>
       <div class="skill">
         <h3>Cloud and MLOps</h3>
-        <div class="chips"><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Streamlit</span><span class="chip">Flask</span><span class="chip">LangServe</span></div>
+        <div class="chips"><span class="chip">AWS</span><span class="chip">Snowflake</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Streamlit</span><span class="chip">Flask</span><span class="chip">LangServe</span></div>
       </div>
       <div class="skill">
         <h3>Retrieval and data stores</h3>
@@ -265,7 +337,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
       </div>
       <div class="skill">
         <h3>Machine learning</h3>
-        <div class="chips"><span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">LightGBM</span><span class="chip">CatBoost</span><span class="chip">Random Forest</span><span class="chip">Walk-forward validation</span><span class="chip">Feature engineering</span></div>
+        <div class="chips"><span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">LightGBM</span><span class="chip">CatBoost</span><span class="chip">Random Forest</span><span class="chip">Anomaly detection</span><span class="chip">SMOTE · ADASYN</span><span class="chip">Walk-forward validation</span><span class="chip">Feature engineering</span></div>
       </div>
       <div class="skill">
         <h3>Deep learning and NLP</h3>
@@ -273,7 +345,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
       </div>
       <div class="skill">
         <h3>Data and engineering</h3>
-        <div class="chips"><span class="chip">Pandas · NumPy</span><span class="chip">Matplotlib · Seaborn · Plotly</span><span class="chip">pytest</span><span class="chip">OOP · logging</span><span class="chip">Data structures and algorithms</span></div>
+        <div class="chips"><span class="chip">Python · SQL</span><span class="chip">Pandas · NumPy</span><span class="chip">Power BI</span><span class="chip">Matplotlib · Seaborn · Plotly</span><span class="chip">pytest</span><span class="chip">OOP · logging</span><span class="chip">Data structures and algorithms</span></div>
       </div>
     </div>
   </section>
@@ -357,33 +429,31 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12
     </div>
   </section>
 
-  <section aria-labelledby="exp-h">
-    <div class="sec-head"><span class="label">Experience</span><h2 id="exp-h">Work and training log</h2></div>
-    <div class="split">
-      <div class="job">
-        <span class="when">Current</span>
-        <h3>Jet2 Travel Technologies</h3>
-        <p class="summary">Working at Jet2's technology centre in India, applying Python, data and AI skills alongside the open-source work shown here.</p>
-        <div class="work-proj">
-          <span class="label">Key project</span>
-          <h4>AI Pricing</h4>
-          <p>Contributed to Jet2's AI pricing project, building AI solutions for pricing in the travel business.</p>
-        </div>
+
+  <section aria-labelledby="edu-h">
+    <div class="sec-head"><span class="label">Credentials</span><h2 id="edu-h">Education, certifications and awards</h2></div>
+    <div class="creds">
+      <div class="cred">
+        <span class="label">Education</span>
+        <div><h3>PG Diploma in Data Science</h3><p>IIIT Bangalore · 2020</p></div>
+        <div><h3>B.E. Computer Science</h3><p>CSIT Durg · 2019</p></div>
       </div>
-      <ol class="log" aria-label="Learning timeline from GitHub history">
-        <li><b>2026</b><p>Built the multi-agent NSE stock analyzer with LangGraph, RAG, ML ensembles and risk guardrails.</p></li>
-        <li><b>2025</b><p>Shipped eleven GenAI apps, a LangChain cookbook and an ANN churn model served on Streamlit.</p></li>
-        <li><b>2024</b><p>Moved into Generative AI: built a RAG tax assistant and started the agentic AI engineering track.</p></li>
-        <li><b>2023</b><p>Went deep on NLP and deep learning, and practised data structures and algorithms in Python.</p></li>
-        <li><b>2022</b><p>Built a foundation in Python, data analysis and classical machine learning across a dozen-plus projects.</p></li>
-        <li><b>2017</b><p>Joined GitHub.</p></li>
-      </ol>
+      <div class="cred">
+        <span class="label">Certifications</span>
+        <div><h3>Azure AI Fundamentals (AI-900)</h3><p>Microsoft Certified</p></div>
+        <div><h3>NLP using Transformers</h3><p>Specialization</p></div>
+      </div>
+      <div class="cred">
+        <span class="label">Awards</span>
+        <div><h3>GenC Digital Honors</h3><p>Cognizant · for high-impact AI/ML delivery</p></div>
+        <div><h3>V-Force Award</h3><p>Cognizant · for contribution and innovation</p></div>
+      </div>
     </div>
   </section>
 
   <footer>
-    <span>Rahul Hirondi · AI / ML Engineer</span>
-    <a href="https://github.com/rahulh1998" target="_blank" rel="noopener">github.com/rahulh1998</a>
+    <span>Rahul Hirondi · Data Scientist and AI / ML Engineer</span>
+    <span class="links"><a href="mailto:rahul.h1998@gmail.com">rahul.h1998@gmail.com</a><a href="https://www.linkedin.com/in/rahulhirondi" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/rahulh1998" target="_blank" rel="noopener">GitHub</a><a href="Rahul_Hirondi_Resume.pdf" target="_blank" rel="noopener">CV</a></span>
   </footer>
 </div>
 </body>
